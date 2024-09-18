@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Plant Seeds Cook - Exploring Backend and Data Engineering">
+    <title>Plant Seeds Cook</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="branding">
+                <h1>Plant Seeds Cook</h1>
+                <p>Creating backend systems for useful tools. <span style="color: green;">Always be planting.</span></p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="about-me">
+            <div class="container">
+                <h2>About Plant Seeds Cook</h2>
+                <p>Plant Seeds Cook comes from a desire to be creative and make ideas come to life. It's a useful diplay window so I can create tools and display my solutions using data.</p>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2>Project Highlights</h2>
+                <ul>
+                    <li><a href="#">Project 1: Data Engineering Pipeline</a></li>
+                    <li><a href="#">Project 2: Backend API in Flask</a></li>
+                    <li><a href="#">Project 3: Algorithm Visualizer</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="dynamic-info" class="dynamic-info">
+            <div class="container">
+                <h2>Currently Cooking</h2>
+                <p>Latest pushed repository: <span id="latest-repo">loading...</span></p>
+                <p>Today is: <span id="current-date"></span></p>
+                <p>You are unique visitor number: <span id="visitor-count">loading...</span></p>
+            </div>
+        </section>
+
+        <section class="update-section">
+            <div class="container">
+                <h2>Latest Update</h2>
+                <p><span id="publish-date">[publish_date]</span> - Welcome to the new site! After a quick refresher on GitHub and HTML, I got this page up. I took some detours and taught myself how to grab and store metadata. You can find out more about how I implemented this site on my <a href="https://github.com/your-profile" target="_blank">GitHub</a>.</p>
+            </div>
+        </section>
+        
+        <section id="skills" class="skills">
+            <div class="container">
+                <h2>Ingredients used:</h2>
+                <ul>
+                    <li>HTML & CSS </li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="social-icons">
+                <a href="https://github.com/your-profile" target="_blank">GitHub</a>
+                <a href="resume.pdf" target="_blank">Resume</a>
+                <a href="https://www.linkedin.com/in/your-profile" target="_blank">LinkedIn</a>
+            </div>
+            <p>Currently seeking a full-time position.</p>
+            <p>Email me: <a href="mailto:Gil@plantseedscook.com">Gil@plantseedscook.com</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-date').innerHTML = new Date().toLocaleDateString();
+        document.getElementById('latest-repo').innerHTML = "Awesome-Data-Pipeline";
+        document.getElementById('visitor-count').innerHTML = Math.floor(Math.random() * 1000) + 1;
+        document.getElementById('publish-date').innerHTML = new Date().toLocaleDateString();
+    </script>
+</body>
+</html>
+
+
