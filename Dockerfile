@@ -1,14 +1,11 @@
 # Use an official nginx image to serve static content
 FROM nginx:alpine
 
-# Set the working directory
-WORKDIR /usr/share/nginx/html
+# Copy the static content to the nginx directory
+COPY . /usr/share/nginx/html
 
-# Copy all the files in your current directory (HTML/CSS) to the container
-COPY . .
-
-# Expose port 80 to serve the site
+# Expose the port that the nginx server is running on
 EXPOSE 80
 
-# Command to run nginx
+# Start the nginx server
 CMD ["nginx", "-g", "daemon off;"]
