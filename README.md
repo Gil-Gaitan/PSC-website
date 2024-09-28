@@ -7,6 +7,7 @@ The website currently consists of a landing page created with HTML and CSS, desi
 
 This project is a demonstration of:
 - Building and interacting with databases
+- ETL pipelines
 - Creating and utilizing APIs
 - Incorporating containerization (Docker)
 - Leveraging SQL for data management
@@ -21,8 +22,10 @@ This project is a demonstration of:
 - **HTML/CSS:** For the front-end structure and styling.
 - **Git:** Version control system to track and manage code changes.
 - **Docker:** Containerization for consistent development environments.
+- **Python & Flask:** API and SQL management
 - **SQL/Database Management:** Create, update, and manage data in backend databases.
 - **API Development:** Expose data via APIs that can be accessed.
+
 - **Unit Testing:** Ensuring reliability and performance of the backend logic.
 
 ## Getting Started

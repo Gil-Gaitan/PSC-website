@@ -1,0 +1,11 @@
+# Ignore devnote.md
+devnote.md
+
+# Ignore logs
+logs
+*.log
+
+PSCooker.py
+
+# Ignore .env file containing credentials
+.env

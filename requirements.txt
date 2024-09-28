@@ -1,0 +1,5 @@
+Flask
+nba_api
+requests
+mysql-connector-python
+python-dotenv

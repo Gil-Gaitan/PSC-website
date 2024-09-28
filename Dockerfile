@@ -1,11 +1,23 @@
-# Use an official nginx image to serve static content
-FROM nginx:alpine
+# Use an official Python runtime as a parent image
+FROM python:3.11-slim
 
-# Copy the static content to the nginx directory
-COPY . /usr/share/nginx/html
+# Set the working directory in the container
+WORKDIR /app
 
-# Expose the port that the nginx server is running on
-EXPOSE 80
+# Copy the requirements.txt file and install dependencies
+COPY requirements.txt /app/
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Start the nginx server
-CMD ["nginx", "-g", "daemon off;"]
+# Copy the rest of the application code into the container
+COPY . /app
+
+# Make port 4440 available to the world outside this container
+EXPOSE 4440
+
+# Define environment variable for Flask
+ENV FLASK_APP=app.py
+ENV FLASK_RUN_PORT=4440
+ENV FLASK_ENV=production
+
+# Run the application
+CMD ["flask", "run", "--host=0.0.0.0"]
