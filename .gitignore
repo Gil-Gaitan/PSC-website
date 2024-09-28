@@ -1,11 +1,10 @@
-# Ignore devnote.md
+# Ignore .env file containing credentials - SECURITY RISK
+.env
+
+# Ignore private developer notes
 devnote.md
+PSCooker.py
 
 # Ignore logs
 logs
 *.log
-
-PSCooker.py
-
-# Ignore .env file containing credentials
-.env
