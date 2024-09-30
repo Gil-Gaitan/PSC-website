@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Plant Seeds Cook - Exploring Backend and Data Engineering">
     <title>Plant Seeds Cook</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <header>
@@ -41,7 +41,7 @@
         <div class="container">
             <div class="social-icons">
                 <a href="https://github.com/Gil-Gaitan" target="_blank">GitHub</a>
-                <a href="resume.pdf" target="_blank">Resume (PDF)</a>
+                <a href="{{ url_for('static', filename='resume.pdf') }}" target="_blank">Resume (PDF)</a>
                 <a href="https://www.linkedin.com/in/gil-gaitan-86094894/" target="_blank">LinkedIn</a>
             </div>
             <p><span style="color: green;">Always be planting.</span></p>

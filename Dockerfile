@@ -1,11 +1,19 @@
-# Use an official nginx image to serve static content
-FROM nginx:alpine
+# Python image
+FROM python:3.11-slim
 
-# Copy the static content to the nginx directory
-COPY . /usr/share/nginx/html
+# Set the working directory inside the container
+WORKDIR /app
 
-# Expose the port that the nginx server is running on
-EXPOSE 80
+# Copy the requirements file and install dependencies
+COPY requirements.txt /app/
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Start the nginx server
-CMD ["nginx", "-g", "daemon off;"]
+# Copy the rest of the application code into the container
+COPY . /app
+
+# Expose the port the app will run on
+EXPOSE 5000
+
+# Command to run the Flask application
+ENV FLASK_APP=app.py
+CMD ["flask", "run", "--host=0.0.0.0"]
