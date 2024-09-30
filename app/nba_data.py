@@ -1,8 +1,7 @@
 # This script fetches Anthony Edwards' career stats using the NBA API and prints the first few rows of the data using pandas
 import pandas as pd
-from nba_api.stats.endpoints import playercareerstats # Import the endpoint classes
-from nba_api.stats.endpoints import commonteamroster
-from nba_api.stats.endpoints import commonplayerinfo
+# Import the modules from the nba_api library
+from nba_api.stats.endpoints import playercareerstats commonteamroster, commonplayerinfo
 from nba_api.stats.static import teams
 
 # Get Minnesota Timberwolves team ID

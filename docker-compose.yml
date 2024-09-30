@@ -6,14 +6,14 @@ services:
       - "4440:4440" # Host:Container
     environment: # Load environment variables from a file
       - .env
-    depends_on:
-      - db
+    # depends_on:
+      # - db
 
-  db: # Database service definition
-    image: mysql:8
-    ports:
-    - "3306:3306" # Host:Container 
-    volumes:  # Mount the database data directory on the host to /var/lib/mysql
-    - db_data:/var/lib/mysql
-    environment: # Load environment variables from a file
-    - .env # same .env file as the web service
+  # db: # Database service definition
+  #   image: mysql:8
+  #   ports:
+  #   - "3306:3306" # Host:Container 
+  #   volumes:  # Mount the database data directory on the host to /var/lib/mysql
+  #   - db_data:/var/lib/mysql
+  #   environment: # Load environment variables from a file
+  #   - .env # same .env file as the web service
