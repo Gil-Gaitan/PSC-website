@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  # Frontend React App (Production Build)
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.prod
+    ports:
+      - "80:80"
+    environment:
+      - REACT_APP_API_URL=https://api.plantseedscook.com
+    depends_on:
+      - backend
+    networks:
+      - psc-network
+
+  # Backend API
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.prod
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGODB_URI=mongodb://mongo:27017/psc-website
+      - NODE_ENV=production
+      - PORT=5000
+      - FRONTEND_URL=https://plantseedscook.com
+    depends_on:
+      - mongo
+      - redis
+    networks:
+      - psc-network
+
+  # MongoDB Database
+  mongo:
+    image: mongo:latest
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - psc-network
+
+  # Redis for caching and sessions
+  redis:
+    image: redis:alpine
+    networks:
+      - psc-network
+
+volumes:
+  mongo_data:
+
+networks:
+  psc-network:
+    driver: bridge

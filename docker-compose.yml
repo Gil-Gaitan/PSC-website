@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  # Frontend React App
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      - REACT_APP_API_URL=http://localhost:5000
+    depends_on:
+      - backend
+    networks:
+      - psc-network
+
+  # Backend API
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5000"
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    environment:
+      - MONGODB_URI=mongodb://mongo:27017/psc-website
+      - NODE_ENV=development
+      - PORT=5000
+    depends_on:
+      - mongo
+    networks:
+      - psc-network
+
+  # MongoDB Database
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - psc-network
+
+  # Redis for caching and sessions
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    networks:
+      - psc-network
+
+volumes:
+  mongo_data:
+
+networks:
+  psc-network:
+    driver: bridge

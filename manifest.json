@@ -1,0 +1,15 @@
+{
+    "name": "PSC Website",
+    "short_name": "PSC",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "description": "A modern, simple static website for PSC.",
+    "icons": [
+        {
+            "src": "favicon.ico",
+            "sizes": "64x64 32x32 24x24 16x16",
+            "type": "image/x-icon"
+        }
+    ]
+}

@@ -1,57 +1,227 @@
-# PSC-website IS UNDER CONSTRUCTION
+# Plant Seeds Cook - Full Stack React Website
 
-**Plant Seeds Cook** is a simple yet impactful website project focused on demonstrating backend development skills and functional tooling. The goal of this site is to provide a clean, minimal front end while showcasing the powerful backend systems that support it. THIS SITE IS CURRENTLY UNDER CONSTRUCTION
+A modern, scalable website built with React, Node.js, and MongoDB. This project showcases backend development and data engineering skills while providing a platform for collaboration and content sharing.
 
-## Project Overview
-The website currently consists of a landing page created with HTML and CSS, designed with simplicity in mind to let the backend features take center stage. - Next stage of this app will implement a base page to utilize for each page.
+## 🌱 Features
 
-This project is a demonstration of:
-- Incorporating containerization (Docker) - This site is a Docker container.
-- Building and interacting with databases - Next stage will allow users to interacet with a database
-- Creating and utilizing APIs - next stages will introduce API availability using Flask
-- Leveraging SQL for data management - SQL is used for next deployment
-- Showcasing reports, security features, and more - Under Development
+- **Real-time Clock**: Live time display in the header
+- **Dynamic Updates**: Blog-style updates with contributor support
+- **Curated Links**: Organized resource links with categories
+- **Modern UI**: Material-UI components with responsive design
+- **Real-time Updates**: Socket.IO integration for live content updates
+- **Analytics**: Visitor tracking and page analytics
+- **Docker Support**: Complete containerized deployment
+- **API Integration**: RESTful API with MongoDB backend
 
-## Features
-- Simple Web Design: A clean design that places emphasis on backend functionality. - Basic HTML is utilized for functionality
-- Backend Integration: The frontend will communicate with a backend API, showcasing the full range of database interaction (CRUD operations). - Project Management methods will be implemented, investment in certifications
-- Dynamic Data: Data from the backend will be used to populate the website dynamically, with sections such as "Currently Cooking" and "Unique Visitors." - This will be some initial exercises with HTML and Python/Flask
+## 🏗️ Architecture
 
-## Tools & Technologies
-- **HTML/CSS:** For the front-end structure and styling.
-- **Git:** Version control system to track and manage code changes. - In development
-- **Docker:** Containerization for consistent development environments. - Gaining experience
-- **SQL/Database Management:** Create, update, and manage data in backend databases. - Utilizing Docker in next version
-- **API Development:** Expose data via APIs that can be accessed. - Upcoming versions, Utilizing NBA_API
-- **Unit Testing:** Ensuring reliability and performance of the backend logic. - WEAK POINT
-- **MORE:** Due to rapid development and formation of a development team, Updates will be delayed until plantseedscook.com V2.1 Omega
-
-## Getting Started
-To get the currently deployed website running locally:
-
-**Clone the repository:**
-```bash
-git clone https://github.com/yourusername/plant-seeds-cook.git
-cd plant-seeds-cook
 ```
-**Install dependencies:**
-(Add any installation steps required if you're using backend technologies like Node.js, Python, etc.)
-Run the HTML file: Open index.html in your browser to view the landing page.
+Frontend (React + Material-UI)
+├── Real-time clock display
+├── Dynamic content management
+├── Responsive design
+└── Modern UI components
 
-## Roadmap
-This project will evolve with added backend functionalities:
+Backend (Node.js + Express)
+├── RESTful API endpoints
+├── MongoDB integration
+├── Socket.IO for real-time features
+└── Analytics tracking
 
-- **API Integration:** Connecting the landing page to a backend system.
-- **Database:** Implementation of SQL database and API routes to access it.
-- **Authentication:** Adding secure authentication features.
-- **Dynamic Content:** Fetching real-time data from the backend and displaying it on the website.
-- **Unit Tests & CI/CD:** Implementing tests and continuous integration workflows.
+Database (MongoDB)
+├── Updates collection
+├── Links collection
+└── Analytics collection
 
-## Contributions
-Feel free to contribute to the project by submitting issues or pull requests.
+Infrastructure (Docker)
+├── Multi-container setup
+├── Nginx for production
+└── Redis for caching
+```
 
-## License
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+## 🚀 Quick Start
 
-## Development Team
-If you are interested in joing the development team, contact Gil@plantseedscook.com
+### Prerequisites
+
+- Docker and Docker Compose
+- Node.js 18+ (for local development)
+- Git
+
+### Development Setup
+
+1. **Clone the repository**
+
+   ```bash
+   git clone <repository-url>
+   cd PSC-website
+   ```
+
+2. **Start all services with Docker Compose**
+
+   ```bash
+   docker-compose up --build
+   ```
+
+3. **Access the application**
+       - Frontend: <http://localhost:3000>
+    - Backend API: <http://localhost:5001>
+   - MongoDB: localhost:27017
+
+### Local Development
+
+1. **Frontend Development**
+
+   ```bash
+   cd frontend
+   npm install
+   npm start
+   ```
+
+2. **Backend Development**
+
+   ```bash
+   cd backend
+   npm install
+   npm run dev
+   ```
+
+## 📁 Project Structure
+
+```
+PSC-website/
+├── frontend/                 # React application
+│   ├── public/
+│   ├── src/
+│   │   ├── components/      # Reusable UI components
+│   │   ├── contexts/        # React context providers
+│   │   ├── pages/          # Page components
+│   │   └── App.js          # Main application
+│   ├── package.json
+│   └── Dockerfile
+├── backend/                  # Node.js API
+│   ├── models/             # MongoDB schemas
+│   ├── routes/             # API endpoints
+│   ├── server.js           # Express server
+│   ├── package.json
+│   └── Dockerfile
+├── docker-compose.yml       # Multi-container orchestration
+└── README.md
+```
+
+## 🔧 API Endpoints
+
+### Updates
+
+- `GET /api/updates` - Get all updates
+- `GET /api/updates/featured` - Get featured update
+- `POST /api/updates` - Create new update
+- `PUT /api/updates/:id` - Update existing update
+- `DELETE /api/updates/:id` - Delete update
+
+### Links
+
+- `GET /api/links` - Get all links
+- `GET /api/links/category/:category` - Get links by category
+- `POST /api/links` - Create new link
+- `PUT /api/links/:id` - Update existing link
+- `DELETE /api/links/:id` - Delete link
+
+### Analytics
+
+- `POST /api/analytics/pageview` - Track page view
+- `GET /api/analytics/summary` - Get analytics summary
+- `GET /api/analytics/visitor-count` - Get visitor count
+
+## 🎨 Customization
+
+### Adding New Features
+
+1. **Frontend Components**: Add new components in `frontend/src/components/`
+2. **Pages**: Create new pages in `frontend/src/pages/`
+3. **API Routes**: Add new routes in `backend/routes/`
+4. **Database Models**: Create new schemas in `backend/models/`
+
+### Styling
+
+- Material-UI theme customization in `frontend/src/index.js`
+- Component-specific styling using Material-UI's `sx` prop
+- Responsive design with Material-UI breakpoints
+
+## 🤝 Contributing
+
+This project is designed for collaboration! Here's how you can contribute:
+
+1. **Add Updates**: Use the updates API to add new content
+2. **Share Links**: Add useful resources to the links section
+3. **Improve Features**: Submit pull requests for new features
+4. **Report Issues**: Create issues for bugs or improvements
+
+### Contributor Guidelines
+
+- Follow the existing code style
+- Add proper documentation for new features
+- Test your changes before submitting
+- Use meaningful commit messages
+
+## 🚀 Deployment
+
+### Production Deployment
+
+1. **Build the application**
+
+   ```bash
+   docker-compose -f docker-compose.prod.yml up --build
+   ```
+
+2. **Environment Variables**
+   - Set `NODE_ENV=production`
+   - Configure MongoDB connection string
+   - Set up Redis for caching
+
+3. **Domain Configuration**
+   - Point your domain to the server
+   - Configure SSL certificates
+   - Set up reverse proxy if needed
+
+## 📊 Analytics & Monitoring
+
+- **Visitor Tracking**: Automatic page view and click tracking
+- **Real-time Updates**: Live content updates via Socket.IO
+- **Performance Monitoring**: Built-in health check endpoints
+- **Error Logging**: Comprehensive error handling and logging
+
+## 🔒 Security Features
+
+- **Rate Limiting**: API rate limiting to prevent abuse
+- **CORS Configuration**: Proper cross-origin resource sharing
+- **Input Validation**: Request validation and sanitization
+- **Helmet.js**: Security headers and protection
+
+## 📱 Mobile Support
+
+- **Responsive Design**: Mobile-first approach
+- **Touch-friendly**: Optimized for touch interactions
+- **Progressive Web App**: PWA capabilities for mobile experience
+
+## 🌟 Future Enhancements
+
+- [ ] User authentication and authorization
+- [ ] Advanced analytics dashboard
+- [ ] Content management system
+- [ ] Email newsletter integration
+- [ ] Social media integration
+- [ ] Advanced search functionality
+- [ ] Multi-language support
+- [ ] Dark/light theme toggle
+
+## 📞 Contact
+
+- **Email**: <Gil@plantseedscook.com>
+- **GitHub**: [Gil-Gaitan](https://github.com/Gil-Gaitan)
+- **LinkedIn**: [Gil Gaitan](https://www.linkedin.com/in/gil-gaitan-86094894/)
+
+---
+
+**Always be planting.** 🌱
+
+Built with React, Node.js, MongoDB, and a passion for backend development.
