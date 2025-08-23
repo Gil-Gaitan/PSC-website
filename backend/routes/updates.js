@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Update = require('../models/Update');
+const { authenticateAdmin } = require('../middleware/auth');
 
 // Get all updates
 router.get('/', async (req, res) => {
@@ -67,8 +68,8 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-// Create new update
-router.post('/', async (req, res) => {
+// Create new update (Admin only)
+router.post('/', authenticateAdmin, async (req, res) => {
     try {
         const { title, content, author, featured, tags } = req.body;
 
@@ -101,8 +102,8 @@ router.post('/', async (req, res) => {
     }
 });
 
-// Update existing update
-router.put('/:id', async (req, res) => {
+// Update existing update (Admin only)
+router.put('/:id', authenticateAdmin, async (req, res) => {
     try {
         const { title, content, author, featured, tags, status } = req.body;
 
@@ -135,8 +136,8 @@ router.put('/:id', async (req, res) => {
     }
 });
 
-// Delete update
-router.delete('/:id', async (req, res) => {
+// Delete update (Admin only)
+router.delete('/:id', authenticateAdmin, async (req, res) => {
     try {
         const update = await Update.findByIdAndDelete(req.params.id);
 

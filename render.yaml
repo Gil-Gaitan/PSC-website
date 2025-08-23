@@ -1,0 +1,44 @@
+services:
+  # Frontend service
+  - type: web
+    name: psc-website-frontend
+    runtime: static
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: ./frontend/build
+    routes:
+      - type: rewrite
+        source: /api/*
+        destination: https://psc-website-backend.onrender.com/api/*
+      - type: rewrite
+        source: /socket.io/*
+        destination: https://psc-website-backend.onrender.com/socket.io/*
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://psc-website-backend.onrender.com
+
+  # Backend service
+  - type: web
+    name: psc-website-backend
+    runtime: node
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: MONGODB_URI
+        fromDatabase:
+          name: psc-website-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: FRONTEND_URL
+        value: https://psc-website-frontend.onrender.com
+
+databases:
+  - name: psc-website-db
+    databaseName: psc-website
+    user: psc-website-user

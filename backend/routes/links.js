@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Link = require('../models/Link');
+const { authenticateAdmin } = require('../middleware/auth');
 
 // Get all links
 router.get('/', async (req, res) => {
@@ -80,8 +81,8 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-// Create new link
-router.post('/', async (req, res) => {
+// Create new link (Admin only)
+router.post('/', authenticateAdmin, async (req, res) => {
     try {
         const { title, url, description, category, tags, author, featured } = req.body;
 
@@ -120,8 +121,8 @@ router.post('/', async (req, res) => {
     }
 });
 
-// Update existing link
-router.put('/:id', async (req, res) => {
+// Update existing link (Admin only)
+router.put('/:id', authenticateAdmin, async (req, res) => {
     try {
         const { title, url, description, category, tags, author, featured, status } = req.body;
 
@@ -159,8 +160,8 @@ router.put('/:id', async (req, res) => {
     }
 });
 
-// Delete link
-router.delete('/:id', async (req, res) => {
+// Delete link (Admin only)
+router.delete('/:id', authenticateAdmin, async (req, res) => {
     try {
         const link = await Link.findByIdAndDelete(req.params.id);
 
