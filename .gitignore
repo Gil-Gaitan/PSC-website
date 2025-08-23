@@ -1,0 +1,49 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+.env
+
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+build/
+dist/
+
+# Docker
+*.pid
+
+# Frontend
+frontend/node_modules/
+frontend/build/
+frontend/dist/
+
+# Backend
+backend/node_modules/
+backend/build/
+backend/dist/
+
+# Misc
+*.swp
+*.swo
+.idea/
+.vscode/
+coverage/
+
+# Ignore local environment files
+.env.*
+
+# Ignore production files
+*.local
+
+# Ignore output from docker-compose
+*.bak
+
+# Ignore PDF resumes
+resume.pdf
