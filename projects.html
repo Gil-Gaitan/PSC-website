@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Plant Seeds Cook - Exploring Backend and Data Engineering">
     <title>Plant Seeds Cook</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="static/css/styles.css">
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -19,7 +21,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="projects.html">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="team.html">Team</a></li>
                 </ul>
             </nav>
         </div>
@@ -28,25 +30,28 @@
     <main>
         <section id="projects" class="projects">
             <div class="container">
-                <h2>Project Highlights:</h2>
+                <h2>Our Services:</h2>
                 <ul>
-                    <li><a href="#">Task 1: Data Engineering Pipeline</a></li>
-                    <li><a href="#">Task 2: Backend API</a></li>
-                    <li><a href="#">Task 3: Algorithms</a></li>
+                    <li>Backend Development & API Design</li>
+                    <li>Database Architecture & Management</li>
+                    <li>Data Engineering & Analytics</li>
+                    <li>Cloud Services</li>
                 </ul>
+
+                <h2>Current Projects:</h2>
+                <p>We're working on some exciting projects including an NBA dunk database and other data-driven
+                    applications. More details coming soon!</p>
             </div>
         </section>
 
         <section id="skills" class="skills">
             <div class="container">
-                <h2>Ingredients:</h2>
+                <h2>Technologies:</h2>
                 <ul>
-                    <li>Web Dev: HTML & CSS </li>
-                    <li>Version Control: Git & GitHub</li>
-                    <li>Backend: empty</li>
-                    <li>Database: empty</li>
-                    <li>Cloud: empty</li>
-                    <li>Tools: empty</li>
+                    <li>Backend: Python, Node.js, Flask, Express</li>
+                    <li>Databases: PostgreSQL, MongoDB, Redis</li>
+                    <li>Cloud: AWS, Docker, Kubernetes</li>
+                    <li>Tools: Git, CI/CD, API Development</li>
                 </ul>
             </div>
         </section>
@@ -55,23 +60,14 @@
 
     <footer id="contact">
         <div class="container">
-            <div class="social-icons">
-                <a href="https://github.com/Gil-Gaitan" target="_blank">GitHub</a>
-                <a href="resume.pdf" target="_blank">Resume (PDF)</a>
-                <a href="https://www.linkedin.com/in/gil-gaitan-86094894/" target="_blank">LinkedIn</a>
-            </div>
             <p><span style="color: green;">Always be planting.</span></p>
-            <p>Email me: <a href="mailto:Gil@plantseedscook.com">Gil@plantseedscook.com</a></p>
+            <p>Contact us: <a href="mailto:hello@plantseedscook.com">hello@plantseedscook.com</a></p>
         </div>
     </footer>
 
     <script>
-        document.getElementById('current-date').innerHTML = new Date().toLocaleDateString();
-        document.getElementById('latest-repo').innerHTML = "Awesome-Data-Pipeline";
-        document.getElementById('visitor-count').innerHTML = Math.floor(Math.random() * 1000) + 1;
-        document.getElementById('publish-date').innerHTML = new Date().toLocaleDateString();
+        // Projects page - no dynamic content needed
     </script>
 </body>
+
 </html>
-
-
