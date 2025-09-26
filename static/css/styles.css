@@ -8,7 +8,7 @@
 body {
     font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: linear-gradient(135deg, #2c5530 0%, #1a365d 100%);
     color: #333;
     min-height: 100vh;
 }
@@ -32,10 +32,10 @@ a:hover {
 
 /* Header Styles */
 header {
-    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    background: linear-gradient(135deg, #2c5530 0%, #1a365d 100%);
     color: white;
     padding: 20px 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(44, 85, 48, 0.3);
 }
 
 header .container {
@@ -71,18 +71,23 @@ nav ul li a:hover {
 /* Section Styles */
 main {
     padding: 40px 0;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     margin: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(44, 85, 48, 0.2);
+    backdrop-filter: blur(10px);
 }
 
 h2 {
     font-size: 2em;
     margin-bottom: 20px;
     color: #222;
-    border-bottom: 2px solid #3498db;
+    border-bottom: 3px solid #2c5530;
     padding-bottom: 10px;
+    background: linear-gradient(135deg, #2c5530, #1a365d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 section {
@@ -105,17 +110,18 @@ section {
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     padding: 15px;
     margin-bottom: 10px;
-    border-left: 4px solid #3498db;
-    border-radius: 5px;
+    border-left: 4px solid #2c5530;
+    border-radius: 8px;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 10px rgba(44, 85, 48, 0.1);
 }
 
 .skills li:hover,
 .projects li:hover {
     background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
     transform: translateX(5px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 15px rgba(44, 85, 48, 0.2);
+    border-left-color: #1a365d;
 }
 
 /* Dynamic Info */
@@ -126,12 +132,13 @@ section {
 
 /* Footer Styles */
 footer {
-    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    background: linear-gradient(135deg, #2c5530 0%, #1a365d 100%);
     color: white;
     padding: 20px 0;
     text-align: center;
     margin-top: 20px;
     border-radius: 10px 10px 0 0;
+    box-shadow: 0 -4px 15px rgba(44, 85, 48, 0.3);
 }
 
 .social-icons a {
@@ -154,6 +161,31 @@ span[style*="color: green"] {
     color: #90EE90 !important;
 }
 
+/* Add subtle animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.team-member {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.team-member:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.team-member:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
 /* Team Page Styles */
 .team-grid {
     display: grid;
@@ -165,14 +197,16 @@ span[style*="color: green"] {
 .team-member {
     background: #fff;
     padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(44, 85, 48, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(44, 85, 48, 0.1);
 }
 
 .team-member:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 25px rgba(44, 85, 48, 0.2);
+    border-color: rgba(44, 85, 48, 0.3);
 }
 
 .team-member h3 {
@@ -200,12 +234,13 @@ span[style*="color: green"] {
 }
 
 .skill-tag {
-    background: #ecf0f1;
-    color: #2c3e50;
+    background: linear-gradient(135deg, #2c5530 0%, #1a365d 100%);
+    color: white;
     padding: 5px 12px;
     border-radius: 15px;
     font-size: 0.9em;
     font-weight: 500;
+    box-shadow: 0 2px 5px rgba(44, 85, 48, 0.3);
 }
 
 .member-links {
@@ -223,6 +258,29 @@ span[style*="color: green"] {
 
 .member-links a:hover {
     color: #2980b9;
+}
+
+/* Placeholder team members - blurred out */
+.team-member.placeholder {
+    filter: blur(3px);
+    opacity: 0.6;
+    pointer-events: none;
+    position: relative;
+}
+
+.team-member.placeholder::after {
+    content: "Coming Soon";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(52, 152, 219, 0.9);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.2em;
+    z-index: 10;
 }
 
 /* Responsive Design */

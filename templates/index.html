@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Plant Seeds Cook - Exploring Backend and Data Engineering">
     <title>Plant Seeds Cook</title>
-    <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 
 <body>
@@ -35,6 +35,7 @@
                     through data-driven solutions. It serves as a creative lab, reflecting a journey of discovering tech
                     and backend development. This site showcases work while fostering new ideas, aiming to be a
                     long-term project of innovation, experimentation, collaboration and growth.</p>
+
             </div>
         </section>
 
@@ -45,6 +46,8 @@
                 <p>The site is getting a light revamp. Stay tuned for further improvements!</p>
             </div>
         </section>
+
+
     </main>
 
     <footer id="contact">
@@ -56,6 +59,30 @@
 
     <script>
         document.getElementById('current-date').innerHTML = new Date().toLocaleDateString();
+
+        // Record visit
+        fetch('/api/record-visit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                ip: window.location.hostname,
+                user_agent: navigator.userAgent
+            })
+        });
+
+        // Get latest update from database
+        fetch('/api/latest-update')
+            .then(response => response.json())
+            .then(data => {
+                if (data.publish_date) {
+                    document.getElementById('publish-date').innerHTML = new Date(data.publish_date).toLocaleDateString();
+                }
+            })
+            .catch(error => {
+                document.getElementById('publish-date').innerHTML = new Date().toLocaleDateString();
+            });
     </script>
 </body>
 
