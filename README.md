@@ -24,28 +24,61 @@ A professional website built with HTML, CSS, and Flask backend, designed to show
 
 ## Getting Started
 
-### Local Development
+### Prerequisites
+
+- Python 3.8 or higher
+- Git
+
+### Local Development Setup
+
+1. **Create a virtual environment**
+
+   ```bash
+   python3 -m venv venv
+   ```
+
+2. **Activate the virtual environment**
+
+   ```bash
+   source venv/bin/activate
+   ```
+
+3. **Install dependencies**
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Run the development server**
+
+   ```bash
+   python run_dev.py
+   ```
+
+5. **View the site**
+   - Open your browser to `http://localhost:5000`
+
+### Quick Start (After Initial Setup)
+
+Once you've done the setup above once, you only need to:
 
 ```bash
-# Clone the repository
-git clone https://github.com/yourusername/plant-seeds-cook.git
-cd plant-seeds-cook
-
-# Run with Python HTTP server (static)
-python3 -m http.server 3000
-
-# Or run with Flask (with database features)
 source venv/bin/activate
-python app.py
+python run_dev.py
 ```
 
-### Docker
+### Docker (Optional)
 
 ```bash
-# Build and run with Docker
 docker build -t plantseedscook .
 docker run -p 5000:5000 plantseedscook
 ```
+
+### Notes
+
+- The database (`plantseedscook.db`) is created automatically on first run
+- Development server runs on port 5000 by default
+- The site deploys automatically to Render when changes are pushed to `main` branch
 
 ## License
 
