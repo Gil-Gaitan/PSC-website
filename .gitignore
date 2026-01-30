@@ -30,3 +30,6 @@ instance/
 
 # Render
 .render/
+
+# Developer Folders
+docs/

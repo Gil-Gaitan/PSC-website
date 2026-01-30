@@ -11,14 +11,13 @@ A professional website built with HTML, CSS, and Flask backend, designed to show
 - Clean, responsive design
 - Team page with member profiles
 - Services and technologies showcase
-- Flask backend with SQLite database
+- Flask backend with Jinja2 templating
 - Docker containerization ready
 
 ## Tech Stack
 
 - **Frontend:** HTML5, CSS3, JavaScript
-- **Backend:** Python Flask
-- **Database:** SQLite
+- **Backend:** Python Flask with Jinja2
 - **Deployment:** Docker
 - **Version Control:** Git
 
@@ -76,9 +75,9 @@ docker run -p 5000:5000 plantseedscook
 
 ### Notes
 
-- The database (`plantseedscook.db`) is created automatically on first run
 - Development server runs on port 5000 by default
 - The site deploys automatically to Render when changes are pushed to `main` branch
+- Project and team data can be easily updated via `projects_data.py` and `team_data.py`
 
 ## License
 
