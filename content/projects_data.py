@@ -4,29 +4,24 @@ Projects data
 
 PROJECTS = [
     {
-        "name": "NBA Dunk Database",
-        "description": "A comprehensive database tracking NBA dunks with player stats, game context, and dunk types. Built with PostgreSQL and Python.",
-        "status": "In Development",
-        "technologies": ["Python", "PostgreSQL", "Flask", "API Development"]
+        "name": "AntDunks",
+        "description": "Database and web application for tracking Anthony Edwards dunks.",
+        "status": "Live",
+        "technologies": ["Python", "PostgreSQL", "Flask", "React"],
+        "url": "https://antdunks.com/",
+        "screenshot": "/static/images/antdunks-screenshot.png",
     },
     {
-        "name": "Data Analytics Platform",
-        "description": "Custom analytics tools for processing and visualizing large datasets, with a focus on real-time data processing.",
-        "status": "Planning",
-        "technologies": ["Python", "Redis", "MongoDB", "Data Engineering"]
-    }
+        "name": "G-Unit Server",
+        "description": "Linux server project to host a variety of services for the Plant Seeds Cook community to reduce overhead and add scalability.",
+        "status": "Live",
+        "technologies": [
+            "Linux",
+            "Server Administration",
+            "Docker",
+            "GitHub Actions",
+            "CI/CD",
+            "Web Hosting",
+        ],
+    },
 ]
-
-SERVICES = [
-    "Backend Development & API Design",
-    "Database Architecture & Management",
-    "Data Engineering & Analytics",
-    "Cloud Services"
-]
-
-TECHNOLOGIES = {
-    "Backend": ["Python", "Node.js", "Flask", "Express"],
-    "Databases": ["PostgreSQL", "MongoDB", "Redis"],
-    "Cloud": ["AWS", "Docker", "Kubernetes"],
-    "Tools": ["Git", "CI/CD", "API Development"]
-}
