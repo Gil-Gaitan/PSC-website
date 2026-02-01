@@ -271,10 +271,11 @@ section {
     background: rgba(0, 0, 0, 0.35);
     border: 1px solid rgba(255, 255, 255, 0.08);
     margin-bottom: 12px;
-    min-height: 44px;
+    height: 92px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 6px;
+    overflow: hidden;
 }
 
 .cursor {
@@ -284,9 +285,17 @@ section {
 }
 
 @keyframes cursorBlink {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 .seed-signal-note {
