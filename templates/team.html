@@ -1,30 +1,29 @@
-{% extends "base.html" %}
-
-{% block meta_description %}Plant Seeds Cook - Meet Our Team{% endblock %}
-{% block title %}Our Team - Plant Seeds Cook{% endblock %}
-
-{% block content %}
+{% extends "base.html" %} {% block meta_description %}Plant Seeds Cook — the
+people behind the workshop.{% endblock %} {% block title %}Our Team - Plant
+Seeds Cook{% endblock %} {% block content %}
 <section id="team" class="team">
-    <div class="container">
-        <h2>Meet Our Team</h2>
-        <div class="team-grid">
-            {% for member in team_members %}
-            <div class="team-member{% if member.placeholder %} placeholder{% endif %}">
-                <h3>{{ member.name }}</h3>
-                <h4>{{ member.title }}</h4>
-                <p>{{ member.bio }}</p>
-                <div class="member-skills">
-                    {% for skill in member.skills %}
-                    <span class="skill-tag">{{ skill }}</span>
-                    {% endfor %}
-                </div>
-                <div class="member-links">
-                    <a href="{{ member.github }}" target="_blank">GitHub</a>
-                    <a href="{{ member.linkedin }}" target="_blank">LinkedIn</a>
-                </div>
-            </div>
-            {% endfor %}
+  <div class="container">
+    <h2>Our Team</h2>
+    <div class="team-grid">
+      {% for member in team_members %}
+      <div
+        class="team-member{% if member.placeholder %} placeholder{% endif %}"
+      >
+        <h3>{{ member.name }}</h3>
+        <h4>{{ member.title }}</h4>
+        <p>{{ member.bio }}</p>
+        <div class="member-skills">
+          {% for skill in member.skills %}
+          <span class="skill-tag">{{ skill }}</span>
+          {% endfor %}
         </div>
+        <div class="member-links">
+          <a href="{{ member.github }}" target="_blank">GitHub</a>
+          <a href="{{ member.linkedin }}" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+      {% endfor %}
     </div>
+  </div>
 </section>
 {% endblock %}

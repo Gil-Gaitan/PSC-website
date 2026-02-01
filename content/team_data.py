@@ -6,7 +6,7 @@ TEAM_MEMBERS = [
         "skills": ["Backend Development", "System Architecture", "Business Operations"],
         "github": "https://github.com/Gil-Gaitan",
         "linkedin": "https://www.linkedin.com/in/gil-gaitan-86094894/",
-        "placeholder": False
+        "placeholder": False,
     },
     {
         "name": "Homestar Runner",
@@ -15,7 +15,7 @@ TEAM_MEMBERS = [
         "skills": ["Frontend Enthusiasm", "User Experience", "Creative Solutions"],
         "github": "https://github.com/",
         "linkedin": "https://www.linkedin.com/",
-        "placeholder": True
+        "placeholder": True,
     },
     {
         "name": "Strong Bad",
@@ -24,6 +24,15 @@ TEAM_MEMBERS = [
         "skills": ["Email Architecture", "System Security", "Legacy Systems"],
         "github": "https://github.com/",
         "linkedin": "https://www.linkedin.com/",
-        "placeholder": True
-    }
+        "placeholder": True,
+    },
+    {
+        "name": "The Cheat",
+        "title": "Senior Cheat Architect",
+        "bio": "The Cheat specializes in cheating and building robust backend systems with a focus on security and performance. His expertise in legacy system maintenance and his no-nonsense approach to debugging make him the go-to developer for critical infrastructure challenges.",
+        "skills": ["Cheat Architecture", "System Security", "Legacy Systems"],
+        "github": "https://github.com/",
+        "linkedin": "https://www.linkedin.com/",
+        "placeholder": True,
+    },
 ]
