@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{% block meta_description %}Plant Seeds Cook - Exploring Backend and Data Engineering{% endblock %}">
+    <title>{% block title %}Plant Seeds Cook{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    {% block extra_head %}{% endblock %}
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <header>
+            <div class="container">
+                <div class="branding">
+                    <h1>Plant Seeds Cook</h1>
+                    <p>Creating backend systems for useful tools. <span style="color: green;">Always be planting.</span></p>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/projects">Projects</a></li>
+                        <li><a href="/team">Team</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+
+        <footer id="contact">
+            <div class="container">
+                <p><span style="color: green;">Always be planting.</span></p>
+                <p>Contact us: <a href="mailto:hello@plantseedscook.com">hello@plantseedscook.com</a></p>
+            </div>
+        </footer>
+    </div>
+
+    {% block extra_scripts %}{% endblock %}
+</body>
+
+</html>

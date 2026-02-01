@@ -1,73 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %} {% block title %}Projects - Plant Seeds Cook{%
+endblock %} {% block content %}
+<section id="projects" class="projects">
+  <div class="container">
+    <h2>Services</h2>
+    <ul>
+      {% for service in services %}
+      <li>{{ service }}</li>
+      {% endfor %}
+    </ul>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Plant Seeds Cook - Exploring Backend and Data Engineering">
-    <title>Plant Seeds Cook</title>
-    <link rel="stylesheet" href="/static/css/styles.css">
-</head>
+    <h2>Projects</h2>
+    {% if projects %}
+    <div class="projects-list">
+      {% for project in projects %}
+      <div class="project-item">
+        <h3>{{ project.name }}</h3>
+        <p>{{ project.description }}</p>
+        <p><strong>Status</strong> {{ project.status }}</p>
+        {% if project.technologies %}
+        <p>
+          <strong>Technologies</strong> {{ project.technologies | join(', ') }}
+        </p>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p>
+        We're working on some exciting projects including a data analytics platform and
+      other data-driven applications. More details coming soon!
+    </p>
+    {% endif %}
+  </div>
+</section>
 
-<body>
-    <header>
-        <div class="container">
-            <div class="branding">
-                <h1>Plant Seeds Cook</h1>
-                <p>Creating backend systems for useful tools. <span style="color: green;">Always be planting.</span></p>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/projects">Projects</a></li>
-                    <li><a href="/team">Team</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <section id="projects" class="projects">
-            <div class="container">
-                <h2>Our Services:</h2>
-                <ul>
-                    <li>Backend Development & API Design</li>
-                    <li>Database Architecture & Management</li>
-                    <li>Data Engineering & Analytics</li>
-                    <li>Cloud Services</li>
-                </ul>
-
-                <h2>Current Projects:</h2>
-                <p>We're working on some exciting projects including an NBA dunk database and other data-driven
-                    applications. More details coming soon!</p>
-            </div>
-        </section>
-
-        <section id="skills" class="skills">
-            <div class="container">
-                <h2>Technologies:</h2>
-                <ul>
-                    <li>Backend: Python, Node.js, Flask, Express</li>
-                    <li>Databases: PostgreSQL, MongoDB, Redis</li>
-                    <li>Cloud: AWS, Docker, Kubernetes</li>
-                    <li>Tools: Git, CI/CD, API Development</li>
-                </ul>
-            </div>
-        </section>
-
-    </main>
-
-    <footer id="contact">
-        <div class="container">
-            <p><span style="color: green;">Always be planting.</span></p>
-            <p>Contact us: <a href="mailto:hello@plantseedscook.com">hello@plantseedscook.com</a></p>
-        </div>
-    </footer>
-
-    <script>
-        // Projects page - no dynamic content needed
-    </script>
-</body>
-
-</html>
+<section id="skills" class="skills">
+  <div class="container">
+    <h2>Technologies</h2>
+    <ul>
+      {% for category, techs in technologies.items() %}
+      <li>{{ category }}: {{ techs | join(', ') }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endblock %}

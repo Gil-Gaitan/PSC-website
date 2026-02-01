@@ -8,9 +8,16 @@
 body {
     font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
-    background: linear-gradient(135deg, #2c5530 0%, #1a365d 100%);
     color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.page-wrapper {
     min-height: 100vh;
+    background: linear-gradient(135deg, #2c5530 0%, #1a365d 100%);
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
@@ -32,10 +39,8 @@ a:hover {
 
 /* Header Styles */
 header {
-    background: linear-gradient(135deg, #2c5530 0%, #1a365d 100%);
     color: white;
     padding: 20px 0;
-    box-shadow: 0 4px 15px rgba(44, 85, 48, 0.3);
 }
 
 header .container {
@@ -72,10 +77,11 @@ nav ul li a:hover {
 main {
     padding: 40px 0;
     background: rgba(255, 255, 255, 0.95);
-    margin: 20px;
+    margin: 0 20px;
     border-radius: 15px;
     box-shadow: 0 8px 25px rgba(44, 85, 48, 0.2);
     backdrop-filter: blur(10px);
+    flex: 1;
 }
 
 h2 {
@@ -124,6 +130,38 @@ section {
     border-left-color: #1a365d;
 }
 
+/* Projects List */
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.project-item {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(44, 85, 48, 0.1);
+    border-left: 4px solid #2c5530;
+    transition: all 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 6px 20px rgba(44, 85, 48, 0.2);
+    border-left-color: #1a365d;
+}
+
+.project-item h3 {
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.project-item p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
 /* Dynamic Info */
 .dynamic-info p {
     font-size: 1.2em;
@@ -132,13 +170,10 @@ section {
 
 /* Footer Styles */
 footer {
-    background: linear-gradient(135deg, #2c5530 0%, #1a365d 100%);
     color: white;
     padding: 20px 0;
     text-align: center;
     margin-top: 20px;
-    border-radius: 10px 10px 0 0;
-    box-shadow: 0 -4px 15px rgba(44, 85, 48, 0.3);
 }
 
 .social-icons a {
@@ -266,21 +301,6 @@ span[style*="color: green"] {
     opacity: 0.6;
     pointer-events: none;
     position: relative;
-}
-
-.team-member.placeholder::after {
-    content: "Coming Soon";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(52, 152, 219, 0.9);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 1.2em;
-    z-index: 10;
 }
 
 /* Responsive Design */
