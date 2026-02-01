@@ -1,28 +1,158 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block content %}
+<section class="hero" aria-label="Homepage hook">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <h2 class="hero-title">Planting Seeds</h2>
+        <p class="hero-subtitle">
 
-{% block content %}
+        </p>
+        <p class="hero-subtitle muted">
+          This is a homebase for the Plant Seeds Cook concept to share work, ideas, and progress.
+        </p>
+
+        <div class="hero-links">
+          <a class="hero-link" href="/projects">See builds →</a>
+        </div>
+      </div>
+
+      <div class="seed-signal" role="group" aria-label="Build signal">
+        <div class="seed-signal-header">
+          <span class="seed-signal-title">Build signal</span>
+          <span class="seed-signal-badge">live</span>
+        </div>
+        <div class="seed-signal-steps" aria-label="Process steps">
+          <span class="step">plant a seed</span>
+          <span class="step-divider">→</span>
+          <span class="step">cook</span>
+        </div>
+        <p class="seed-signal-note">current status:</p>
+        <div class="seed-signal-terminal" aria-label="Rotating build line">
+          <span id="seed-signal-line">planting: a small idea</span><span class="cursor" aria-hidden="true">▍</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="about" class="about-me">
-    <div class="container">
-        <h2>About Plant Seeds Cook</h2>
-        <p><strong>Plant Seeds Cook</strong> is a platform built to cultivate ideas and bring them to life
-            through data-driven solutions. It serves as a creative lab, reflecting a journey of discovering tech
-            and backend development. This site showcases work while fostering new ideas, aiming to be a
-            long-term project of innovation, experimentation, collaboration and growth.</p>
+  <div class="container">
+    <h2>Cooking</h2>
+    <p>
+      See the list of projects we have cooked up.
+    </p>
+    <p>
+      This will be a place to show off our work as we gain experience.
+    </p>
 
+    <div class="hero-links">
+      <a class="hero-link" href="#currently-cooking">Read the log →</a>
     </div>
+
+  </div>
+
 </section>
 
-<section id="dynamic-info" class="dynamic-info">
-    <div class="container">
-        <h2>Currently Cooking</h2>
-        <p>Today is: <span id="current-date"></span></p>
-        <p>The site is getting a light revamp. Stay tuned for further improvements!</p>
+<section id="services" class="services">
+  <div class="container">
+    <h2>What Gets Built Here</h2>
+    <div class="services-grid">
+      <div class="service-item">
+        <h3>🌐 Small products & prototypes</h3>
+        <p>
+          End-to-end builds where the constraints are real: UX, data, speed, and
+          deployment.
+        </p>
+      </div>
+      <div class="service-item">
+        <h3>⚙️ APIs & backend systems</h3>
+        <p>
+          Systems that stay boring under load: clean interfaces, observability,
+          and predictable performance.
+        </p>
+      </div>
+      <div class="service-item">
+        <h3>📊 Data workflows</h3>
+        <p>
+          Schemas, pipelines, and small analytics utilities—built to survive
+          change and messy inputs.
+        </p>
+      </div>
+      <div class="service-item">
+        <h3>🚀 Infrastructure & automation</h3>
+        <p>
+          Containers, CI, deploy scripts, and repeatable environments so “works
+          on my machine” isn’t the ending.
+        </p>
+      </div>
+      <div class="service-item">
+        <h3>🖥️ Linux server platform</h3>
+        <p>
+          Building platform-as-a-service on real hardware: bare metal,
+          network configs, and hands-on infrastructure.
+        </p>
+      </div>
+      <div class="service-item">
+        <h3>🛠️ Business tools & automation</h3>
+        <p>
+          Practical utilities that solve real problems: automating workflows,
+          reducing manual work, and making operations smoother.
+        </p>
+      </div>
     </div>
+  </div>
 </section>
-{% endblock %}
 
-{% block extra_scripts %}
-<script>
-    document.getElementById('current-date').innerHTML = new Date().toLocaleDateString();
-</script>
+<section id="selected-builds" class="selected-builds">
+  <div class="container">
+    <h2>Selected builds</h2>
+    <p class="section-subtext">
+      A few things that made it out of the workshop.
+    </p>
+    {% if projects %}
+    <div class="featured-projects">
+      {% for project in projects %}
+      <div class="featured-project-card">
+        {% if project.url %}
+        <h3>
+          <a href="{{ project.url }}" target="_blank" rel="noopener noreferrer"
+            style="color: inherit; text-decoration: none">{{ project.name }} →</a>
+        </h3>
+        {% else %}
+        <h3>{{ project.name }}</h3>
+        {% endif %}
+        <p>{{ project.description }}</p>
+        {% if project.technologies %}
+        <div class="project-tech">
+          {% for tech in project.technologies %}
+          <span class="tech-badge">{{ tech }}</span>
+          {% endfor %}
+        </div>
+        {% endif %} {% if project.status %}
+        <p><strong>Status:</strong> {{ project.status }}</p>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    <a class="view-all-link" href="/projects">See all builds →</a>
+    {% else %}
+    <p>Builds landing soon.</p>
+    {% endif %}
+  </div>
+</section>
+
+<section id="currently-cooking" class="currently-cooking">
+  <div class="container">
+    <h2>Currently cooking</h2>
+    <p class="section-subtext">Ideas, notes, and work in progress.</p>
+    <div class="posts-list">
+      {% for post in posts %}
+      <div class="post-item">
+        <span class="post-date">{{ post.date }}</span>
+        <p class="post-text">{{ post.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
 {% endblock %}

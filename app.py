@@ -3,13 +3,14 @@ from content.projects_data import PROJECTS
 from content.team_data import TEAM_MEMBERS
 from content.dropabeat_data import DEFAULT_TRACKS
 from content.apps_data import APPS
+from content.posts_data import POSTS
 
 app = Flask(__name__, static_folder="static", static_url_path="/static")
 
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("index.html", posts=POSTS, projects=PROJECTS[:2])
 
 
 @app.route("/about")

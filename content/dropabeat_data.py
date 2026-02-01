@@ -14,7 +14,6 @@ DEFAULT_TRACKS = [
     "ElTHdSkNw_0",  # DREAM ON with Lloyd @TheLotRadio 02-26-2025
     "vsDfYvH7vQM",  # VOYAGER FM with Karl Brisseaux @TheLotRadio 02-27-2025
     "E7jzrBuFBpA",  # ¥ØU$UK€ ¥UK1MAT$U @TheLotRadio 09-10-2025
-    "21vfxVxw8lc",  # summer school radio with Hyanna @TheLotRadio 08-12-2025
     "Ec0Ei5Z6R-Q",  # gatorface / 454 @TheLotRadio 01-30-2023
     "k0MtgJv-eJA",  # AliA @TheLotRadio 09-21-2025
     "6HUsLz6nw_c",  # Daniel Avery @TheLotRadio 09-23-2022
