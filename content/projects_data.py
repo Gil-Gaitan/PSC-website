@@ -32,4 +32,14 @@ PROJECTS = [
             "Cloudflare",
         ],
     },
+    {
+        "name": "dropyourbeat.com",
+        "description": "This is the next sibling of the drop a beat app. Will be hosted on G-Unit with a user database. Aside from a login feature, the app will provide a way for users to share their playlist in the form of a generated URL.",
+        "status": "Cooking",
+        "technologies": [
+            "F#",
+            "Elmish",
+            "PostgreSQL",
+        ],
+    },
 ]

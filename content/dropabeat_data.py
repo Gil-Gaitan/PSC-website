@@ -1,20 +1,20 @@
 DEFAULT_TRACKS = [
-    "WiSXx_GcJ-c",  # Fred again.. @TheLotRadio 12-06-2021
-    "9Stt4wq3KCE",  # Overmono, Fred Again.. & Lil Yachty @TheLotRadio
-    "mdiL5KWYgNI",  # Toro Y Moi @ Times Square Transmissions 12 11 2018
-    "zpoSzHC3-tE",  # JOAKIM & Kindness @ The Lot Radio (September 1, 2016)
-    "ihMgukdmPSM",  # ROSIE @TheLotRadio 11-03-2024
-    "5f5It7rgBUg",  # Matt & Kim - Cutdown - A-D-D
-    "3FAr3suYBgs",  # CAPTURED TRACKS with Franklin Ligh and Mathilde VL@TheLotRadio 10-03-2024
-    "IJh7jg1pq10",  # Carole Fe @TheLotRadio 09-24-2024
-    "1iQl46-zIcM",  # Soul II Soul, Caron Wheeler - Keep On Movin'
-    "14_8Q7I2EzM",  # DADA STRAIN with Piotr Orlov @TheLotRadio 12-06-2024
-    "CKghuBixEWM",  # B.D.A. with Toribio @TheLotRadio 12-10-2024
-    "Y9c8tD4zPLI",  # Good Vibrations - A mix of Dub, Soul, Hip Hop, Jazz, Electronica, House and more!
-    "ElTHdSkNw_0",  # DREAM ON with Lloyd @TheLotRadio 02-26-2025
-    "vsDfYvH7vQM",  # VOYAGER FM with Karl Brisseaux @TheLotRadio 02-27-2025
-    "E7jzrBuFBpA",  # ¥ØU$UK€ ¥UK1MAT$U @TheLotRadio 09-10-2025
-    "Ec0Ei5Z6R-Q",  # gatorface / 454 @TheLotRadio 01-30-2023
-    "k0MtgJv-eJA",  # AliA @TheLotRadio 09-21-2025
-    "6HUsLz6nw_c",  # Daniel Avery @TheLotRadio 09-23-2022
+    "zhVgbZdMdb0",  # Thundercat: NPR Music Tiny Desk Concert
+    "y_YJR3hxjGI",  # jazzENIGMATIC with Jhn Adms @TheLotRadio 11-08-2025
+    "6MAzUT1YhWE",  # Fred again.. - Rooftop Live (Arun’s Roof, London)
+    "ahe9baHOWIg",  # Four Tet, Fred Again.. & Skrillex live from Times Square for @TheLotRadio
+    "a4gXBMhBsVg",  # Mic'd at MIRS with Ayanna Heaven @TheLotRadio 02-14-2026
+    "e1KbUP8PdGc",  # Salif Keita - Primpin (Live at Komyo-in Temple, Kyoto)
+    "rmgRZ0O6ZT4",  # PHOENIX - LIVE AT ACCORHOTELS ARENA PARIS (SEPT 2017)
+    "06CA5pYielY",  # Matt and Kim on July 4th 2006 at 330 Melrose
+    "ferZnZ0_rSM",  # Anderson .Paak & The Free Nationals: NPR Music Tiny Desk Concert
+    "GS2Y_CkaXP0",  # Robert Glasper - So Beautiful (Live At Capitol Studios)
+    "u-syZXHPcJE",  # Run The Jewels: NPR Music Tiny Desk Concert
+    "0tTpl77IRGA",  # Yamê - ÉBĒM Live Session
+    "Jxbsl9q1y24",  # Salif Keita - Aboubakrin | A COLORS SHOW
+    "PQF6x_FgnJ0",  # Aesop Rock - The Impossible Kid (Full Album Stream)
+    "KNrB6--KBqs",  # Aesop Rock - None Shall Pass (Official Video)
+    "6mqTG8pSvZg",  # STRFKR - Live From Brooklyn Steel
+    "uQd58-K_Xg8",  # Deltron 3030:The Instrumentals(Full Album)
+    "rFajDSmnrP8",  # Hak Baker - Luvly | A Take Away Show
 ]
