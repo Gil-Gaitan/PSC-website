@@ -548,11 +548,45 @@
       dropButton.disabled = false;
     }
 
+    function requestHighestQuality() {
+      if (!player) return;
+
+      function apply() {
+        if (typeof player.getAvailableQualityLevels === 'function') {
+          const levels = player.getAvailableQualityLevels();
+          if (levels && levels.length > 0) {
+            player.setPlaybackQuality(levels[0]);
+            return;
+          }
+        }
+        if (typeof player.setPlaybackQuality === 'function') {
+          player.setPlaybackQuality('highres');
+        }
+      }
+
+      apply();
+      requestAnimationFrame(apply);
+    }
+
+    function playNextTrack() {
+      if (tracks.length === 0 || !currentTrackId) {
+        updateNowPlaying(null, 'idle');
+        return;
+      }
+      const i = tracks.indexOf(currentTrackId);
+      if (i === -1) {
+        updateNowPlaying(null, 'idle');
+        return;
+      }
+      playTrack(tracks[(i + 1) % tracks.length]);
+    }
+
     function onPlayerStateChange(event) {
       if (event.data === YT.PlayerState.PLAYING) {
+        requestHighestQuality();
         updateNowPlaying(currentTrackId, 'playing');
       } else if (event.data === YT.PlayerState.ENDED) {
-        updateNowPlaying(null, 'idle');
+        playNextTrack();
       }
     }
 
