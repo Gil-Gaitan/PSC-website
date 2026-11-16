@@ -4,9 +4,6 @@
     <div class="hero-grid">
       <div class="hero-copy">
         <h2 class="hero-title">Planting Seeds</h2>
-        <p class="hero-subtitle">
-
-        </p>
         <p class="hero-subtitle muted">
           This is a homebase for the Plant Seeds Cook concept to share work, ideas, and progress.
         </p>
@@ -58,42 +55,42 @@
     <h2>What Gets Built Here</h2>
     <div class="services-grid">
       <div class="service-item">
-        <h3>🌐 Small products & prototypes</h3>
+        <h3>Small products & prototypes</h3>
         <p>
           End-to-end builds where the constraints are real: UX, data, speed, and
           deployment.
         </p>
       </div>
       <div class="service-item">
-        <h3>⚙️ APIs & backend systems</h3>
+        <h3>APIs & backend systems</h3>
         <p>
           Systems that stay boring under load: clean interfaces, observability,
           and predictable performance.
         </p>
       </div>
       <div class="service-item">
-        <h3>📊 Data workflows</h3>
+        <h3>Data workflows</h3>
         <p>
           Schemas, pipelines, and small analytics utilities—built to survive
           change and messy inputs.
         </p>
       </div>
       <div class="service-item">
-        <h3>🚀 Infrastructure & automation</h3>
+        <h3>Infrastructure & automation</h3>
         <p>
           Containers, CI, deploy scripts, and repeatable environments so “works
           on my machine” isn’t the ending.
         </p>
       </div>
       <div class="service-item">
-        <h3>🖥️ Linux server platform</h3>
+        <h3>Linux server platform</h3>
         <p>
           Building platform-as-a-service on real hardware: bare metal,
           network configs, and hands-on infrastructure.
         </p>
       </div>
       <div class="service-item">
-        <h3>🛠️ Business tools & automation</h3>
+        <h3>Business tools & automation</h3>
         <p>
           Practical utilities that solve real problems: automating workflows,
           reducing manual work, and making operations smoother.
@@ -112,26 +109,9 @@
     {% if projects %}
     <div class="featured-projects">
       {% for project in projects %}
-      <div class="featured-project-card">
-        {% if project.url %}
-        <h3>
-          <a href="{{ project.url }}" target="_blank" rel="noopener noreferrer"
-            style="color: inherit; text-decoration: none">{{ project.name }} →</a>
-        </h3>
-        {% else %}
-        <h3>{{ project.name }}</h3>
-        {% endif %}
-        <p>{{ project.description }}</p>
-        {% if project.technologies %}
-        <div class="project-tech">
-          {% for tech in project.technologies %}
-          <span class="tech-badge">{{ tech }}</span>
-          {% endfor %}
-        </div>
-        {% endif %} {% if project.status %}
-        <p><strong>Status:</strong> {{ project.status }}</p>
-        {% endif %}
-      </div>
+      {% with card_class="featured-project-card", show_screenshot=false %}
+      {% include "_project_card.html" %}
+      {% endwith %}
       {% endfor %}
     </div>
     <a class="view-all-link" href="/projects">See all builds →</a>

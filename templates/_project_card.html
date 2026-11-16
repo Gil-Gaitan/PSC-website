@@ -1,0 +1,65 @@
+<article class="{{ card_class|default('project-item') }}">
+  <h3>
+    {% if project.url %}
+    <a
+      class="project-link"
+      href="{{ project.url }}"
+      {% if not project.internal %}target="_blank" rel="noopener noreferrer"{% endif %}
+      >{{ project.name }}{% if not project.internal %} →{% endif %}</a
+    >
+    {% elif project.repo %}
+    <a class="project-link" href="{{ project.repo }}" target="_blank" rel="noopener noreferrer"
+      >{{ project.name }} →</a
+    >
+    {% else %}
+    {{ project.name }}
+    {% endif %}
+  </h3>
+
+  {% if show_screenshot and project.screenshot and project.url %}
+  <a
+    class="project-shot-link"
+    href="{{ project.url }}"
+    {% if not project.internal %}target="_blank" rel="noopener noreferrer"{% endif %}
+  >
+    <img class="project-shot" src="{{ project.screenshot }}" alt="{{ project.name }} screenshot" />
+  </a>
+  {% endif %}
+
+  {% if project.description %}
+  <p>{{ project.description }}</p>
+  {% endif %}
+
+  {% if project.signup %}
+  <p class="project-note">{{ project.signup }}</p>
+  {% endif %}
+
+  {% if project.technologies %}
+  <div class="project-tech">
+    {% for tech in project.technologies %}
+    <span class="tech-badge">{{ tech }}</span>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if project.help %}
+  <p class="project-help-label">Help</p>
+  <ul class="project-help">
+    {% for line in project.help %}
+    <li>{{ line }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+  {% if project.status %}
+  <p class="project-status"><strong>Status:</strong> {{ project.status }}</p>
+  {% endif %}
+
+  {% if project.repo and project.url %}
+  <p class="project-links">
+    <a class="project-link" href="{{ project.repo }}" target="_blank" rel="noopener noreferrer"
+      >Repository</a
+    >
+  </p>
+  {% endif %}
+</article>

@@ -10,7 +10,8 @@ app = Flask(__name__, static_folder="static", static_url_path="/static")
 
 @app.route("/")
 def index():
-    return render_template("index.html", posts=POSTS, projects=PROJECTS[:2])
+    featured = [project for project in PROJECTS if project.get("featured")]
+    return render_template("index.html", posts=POSTS, projects=featured)
 
 
 @app.route("/about")

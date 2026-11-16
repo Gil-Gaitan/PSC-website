@@ -5,22 +5,34 @@ Projects data
 PROJECTS = [
     {
         "name": "AntDunks",
-        "description": "Database and web application for tracking Anthony Edwards dunks. Robust CI/CD pipeline to deploy new features and fixes.",
+        "description": (
+            "Database and web application for tracking Anthony Edwards dunks. "
+            "FastAPI, React, and PostgreSQL run on the home server, with CI and monitoring. "
+            "Live at antdunks.com."
+        ),
         "status": "Live",
         "technologies": [
-            "Python",
-            "PostgreSQL",
+            "FastAPI",
             "React",
-            "REST API",
-            "Grafana",
-            "IaC",
+            "PostgreSQL",
+            "CI",
+            "Monitoring",
+        ],
+        "help": [
+            "Add media and video",
+            "Add rate limits, caching, and broader tests",
         ],
         "url": "https://antdunks.com/",
         "screenshot": "/static/images/antdunks-screenshot.png",
+        "featured": True,
     },
     {
         "name": "G-Unit Server",
-        "description": "Linux server that hosts a variety of services for Plant Seeds Cook. This will reduce overhead and add scalability to our workshop.",
+        "description": (
+            "Linux server that hosts services for Plant Seeds Cook. "
+            "Brought current, with some redesign. "
+            "Firewall and SSH are hardened, and a maintenance plan is in place."
+        ),
         "status": "Live",
         "technologies": [
             "Linux",
@@ -31,15 +43,27 @@ PROJECTS = [
             "Web Hosting",
             "Cloudflare",
         ],
+        "featured": True,
+    },
+    {
+        "name": "Hegstrom & Sons",
+        "repo": "https://github.com/Gil-Gaitan/hegstromandsons-main",
+        "featured": True,
+    },
+    {
+        "name": "Cultivate Rhythms",
+        "featured": True,
     },
     {
         "name": "dropyourbeat.com",
-        "description": "This is the next sibling of the drop a beat app. Will be hosted on G-Unit with a user database. Aside from a login feature, the app will provide a way for users to share their playlist in the form of a generated URL.",
-        "status": "Cooking",
+        "description": "F# and Fable dunk archive, fan site, and in-game dunk tracker.",
+        "signup": "Sign up on the site if you want.",
+        "status": "Rolling out",
         "technologies": [
             "F#",
-            "Elmish",
-            "PostgreSQL",
+            "Fable",
         ],
+        "url": "https://dropyourbeat.com",
+        "featured": True,
     },
 ]
