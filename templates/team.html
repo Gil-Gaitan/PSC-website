@@ -1,26 +1,33 @@
 {% extends "base.html" %} {% block meta_description %}Plant Seeds Cook — the
-people behind the workshop.{% endblock %} {% block title %}Our Team - Plant
+people behind the workshop.{% endblock %} {% block title %}The Team - Plant
 Seeds Cook{% endblock %} {% block content %}
 <section id="team" class="team">
   <div class="container">
-    <h2>Our Team</h2>
+    <h2>The Team</h2>
+    <p>
+      Our mission is to foster growth, inspire each other to work on engineering skills, and bring our ideas to life. In an era when we need to become all-in-one developers, system architects, as well as effective directors of our agentic capabilities, our clever thinking has incredible value. The PSxC organization is a place to safely practice working together on production systems with real clients. And with the support of team, we will improve our chances of success.
+    </p>
     <div class="team-grid">
       {% for member in team_members %}
       <div
         class="team-member{% if member.placeholder %} placeholder{% endif %}"
       >
-        <h3>{{ member.name }}</h3>
-        <h4>{{ member.title }}</h4>
-        <p>{{ member.bio }}</p>
+        {% if member.name %}<h3>{{ member.name }}</h3>{% endif %}
+        {% if member.title %}<h4>{{ member.title }}</h4>{% endif %}
+        {% if member.bio %}<p>{{ member.bio }}</p>{% endif %}
+        {% if member.skills %}
         <div class="member-skills">
           {% for skill in member.skills %}
           <span class="skill-tag">{{ skill }}</span>
           {% endfor %}
         </div>
+        {% endif %}
+        {% if member.github or member.linkedin %}
         <div class="member-links">
-          <a href="{{ member.github }}" target="_blank">GitHub</a>
-          <a href="{{ member.linkedin }}" target="_blank">LinkedIn</a>
+          {% if member.github %}<a href="{{ member.github }}" target="_blank">GitHub</a>{% endif %}
+          {% if member.linkedin %}<a href="{{ member.linkedin }}" target="_blank">LinkedIn</a>{% endif %}
         </div>
+        {% endif %}
       </div>
       {% endfor %}
     </div>

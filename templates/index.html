@@ -4,11 +4,8 @@
     <div class="hero-grid">
       <div class="hero-copy">
         <h2 class="hero-title">Planting Seeds</h2>
-        <p class="hero-subtitle">
-
-        </p>
         <p class="hero-subtitle muted">
-          This is a homebase for the Plant Seeds Cook concept to share work, ideas, and progress.
+          Plant Seeds Cook is an environment organized to build out ideas into useful applications. The more seeds we plant, the better. We are resourceful, creative, and have a desire to experiment.
         </p>
 
         <div class="hero-links">
@@ -39,15 +36,8 @@
   <div class="container">
     <h2>Cooking</h2>
     <p>
-      See the list of projects we have cooked up.
+      PSxC has built a workshop environment to bring the ideas to life. We started by deploying some services online, then invested in a server so we can start hosting, and more recently started publishing light apps to advertise for local small businesses.
     </p>
-    <p>
-      This will be a place to show off our work as we gain experience.
-    </p>
-
-    <div class="hero-links">
-      <a class="hero-link" href="#currently-cooking">Read the log →</a>
-    </div>
 
   </div>
 
@@ -58,42 +48,41 @@
     <h2>What Gets Built Here</h2>
     <div class="services-grid">
       <div class="service-item">
-        <h3>🌐 Small products & prototypes</h3>
+        <h3>Small products & prototypes</h3>
         <p>
           End-to-end builds where the constraints are real: UX, data, speed, and
           deployment.
         </p>
       </div>
       <div class="service-item">
-        <h3>⚙️ APIs & backend systems</h3>
+        <h3>APIs & backend systems</h3>
         <p>
           Systems that stay boring under load: clean interfaces, observability,
           and predictable performance.
         </p>
       </div>
       <div class="service-item">
-        <h3>📊 Data workflows</h3>
+        <h3>Data workflows</h3>
         <p>
           Schemas, pipelines, and small analytics utilities—built to survive
           change and messy inputs.
         </p>
       </div>
       <div class="service-item">
-        <h3>🚀 Infrastructure & automation</h3>
+        <h3>Infrastructure & automation</h3>
         <p>
-          Containers, CI, deploy scripts, and repeatable environments so “works
-          on my machine” isn’t the ending.
+          Containers, CI, deploy scripts, and repeatable environments, designed to maintain trust in the automation as we build.
         </p>
       </div>
       <div class="service-item">
-        <h3>🖥️ Linux server platform</h3>
+        <h3>Linux server platform</h3>
         <p>
           Building platform-as-a-service on real hardware: bare metal,
           network configs, and hands-on infrastructure.
         </p>
       </div>
       <div class="service-item">
-        <h3>🛠️ Business tools & automation</h3>
+        <h3>Business tools & automation</h3>
         <p>
           Practical utilities that solve real problems: automating workflows,
           reducing manual work, and making operations smoother.
@@ -105,54 +94,22 @@
 
 <section id="selected-builds" class="selected-builds">
   <div class="container">
-    <h2>Selected builds</h2>
+    <h2>Select Builds</h2>
     <p class="section-subtext">
       A few things that made it out of the workshop.
     </p>
     {% if projects %}
     <div class="featured-projects">
       {% for project in projects %}
-      <div class="featured-project-card">
-        {% if project.url %}
-        <h3>
-          <a href="{{ project.url }}" target="_blank" rel="noopener noreferrer"
-            style="color: inherit; text-decoration: none">{{ project.name }} →</a>
-        </h3>
-        {% else %}
-        <h3>{{ project.name }}</h3>
-        {% endif %}
-        <p>{{ project.description }}</p>
-        {% if project.technologies %}
-        <div class="project-tech">
-          {% for tech in project.technologies %}
-          <span class="tech-badge">{{ tech }}</span>
-          {% endfor %}
-        </div>
-        {% endif %} {% if project.status %}
-        <p><strong>Status:</strong> {{ project.status }}</p>
-        {% endif %}
-      </div>
+      {% with card_class="featured-project-card", show_screenshot=false %}
+      {% include "_project_card.html" %}
+      {% endwith %}
       {% endfor %}
     </div>
     <a class="view-all-link" href="/projects">See all builds →</a>
     {% else %}
     <p>Builds landing soon.</p>
     {% endif %}
-  </div>
-</section>
-
-<section id="currently-cooking" class="currently-cooking">
-  <div class="container">
-    <h2>Currently cooking</h2>
-    <p class="section-subtext">Ideas, notes, and work in progress.</p>
-    <div class="posts-list">
-      {% for post in posts %}
-      <div class="post-item">
-        <span class="post-date">{{ post.date }}</span>
-        <p class="post-text">{{ post.text }}</p>
-      </div>
-      {% endfor %}
-    </div>
   </div>
 </section>
 {% endblock %}
