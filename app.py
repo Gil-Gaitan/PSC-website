@@ -3,15 +3,13 @@ from content.projects_data import PROJECTS
 from content.team_data import TEAM_MEMBERS
 from content.dropabeat_data import DEFAULT_TRACKS
 from content.apps_data import APPS
-from content.posts_data import POSTS
-
 app = Flask(__name__, static_folder="static", static_url_path="/static")
 
 
 @app.route("/")
 def index():
     featured = [project for project in PROJECTS if project.get("featured")]
-    return render_template("index.html", posts=POSTS, projects=featured)
+    return render_template("index.html", projects=featured)
 
 
 @app.route("/about")

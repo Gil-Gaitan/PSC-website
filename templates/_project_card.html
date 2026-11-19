@@ -30,6 +30,12 @@
   <p>{{ project.description }}</p>
   {% endif %}
 
+  {% if project.names %}
+  {% for name in project.names %}
+  <p>{{ name }}</p>
+  {% endfor %}
+  {% endif %}
+
   {% if project.signup %}
   <p class="project-note">{{ project.signup }}</p>
   {% endif %}
@@ -40,15 +46,6 @@
     <span class="tech-badge">{{ tech }}</span>
     {% endfor %}
   </div>
-  {% endif %}
-
-  {% if project.help %}
-  <p class="project-help-label">Help</p>
-  <ul class="project-help">
-    {% for line in project.help %}
-    <li>{{ line }}</li>
-    {% endfor %}
-  </ul>
   {% endif %}
 
   {% if project.status %}

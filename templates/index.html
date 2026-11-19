@@ -5,7 +5,7 @@
       <div class="hero-copy">
         <h2 class="hero-title">Planting Seeds</h2>
         <p class="hero-subtitle muted">
-          This is a homebase for the Plant Seeds Cook concept to share work, ideas, and progress.
+          Plant Seeds Cook is an environment organized to build out ideas into useful applications. The more seeds we plant, the better. We are resourceful, creative, and have a desire to experiment.
         </p>
 
         <div class="hero-links">
@@ -36,15 +36,8 @@
   <div class="container">
     <h2>Cooking</h2>
     <p>
-      See the list of projects we have cooked up.
+      PSxC has built a workshop environment to bring the ideas to life. We started by deploying some services online, then invested in a server so we can start hosting, and more recently started publishing light apps to advertise for local small businesses.
     </p>
-    <p>
-      This will be a place to show off our work as we gain experience.
-    </p>
-
-    <div class="hero-links">
-      <a class="hero-link" href="#currently-cooking">Read the log →</a>
-    </div>
 
   </div>
 
@@ -78,8 +71,7 @@
       <div class="service-item">
         <h3>Infrastructure & automation</h3>
         <p>
-          Containers, CI, deploy scripts, and repeatable environments so “works
-          on my machine” isn’t the ending.
+          Containers, CI, deploy scripts, and repeatable environments, designed to maintain trust in the automation as we build.
         </p>
       </div>
       <div class="service-item">
@@ -102,7 +94,7 @@
 
 <section id="selected-builds" class="selected-builds">
   <div class="container">
-    <h2>Selected builds</h2>
+    <h2>Select Builds</h2>
     <p class="section-subtext">
       A few things that made it out of the workshop.
     </p>
@@ -118,21 +110,6 @@
     {% else %}
     <p>Builds landing soon.</p>
     {% endif %}
-  </div>
-</section>
-
-<section id="currently-cooking" class="currently-cooking">
-  <div class="container">
-    <h2>Currently cooking</h2>
-    <p class="section-subtext">Ideas, notes, and work in progress.</p>
-    <div class="posts-list">
-      {% for post in posts %}
-      <div class="post-item">
-        <span class="post-date">{{ post.date }}</span>
-        <p class="post-text">{{ post.text }}</p>
-      </div>
-      {% endfor %}
-    </div>
   </div>
 </section>
 {% endblock %}

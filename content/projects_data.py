@@ -5,11 +5,7 @@ Projects data
 PROJECTS = [
     {
         "name": "AntDunks",
-        "description": (
-            "Database and web application for tracking Anthony Edwards dunks. "
-            "FastAPI, React, and PostgreSQL run on the home server, with CI and monitoring. "
-            "Live at antdunks.com."
-        ),
+        "description": "We recently started laying out a pathway for our hosted service to move from a foundational prototype to an early version app with fuller capability and longevity. We can't wait to work on data collection and distribution, but we want to tighten up the foundation before we roll out new features.",
         "status": "Live",
         "technologies": [
             "FastAPI",
@@ -17,10 +13,6 @@ PROJECTS = [
             "PostgreSQL",
             "CI",
             "Monitoring",
-        ],
-        "help": [
-            "Add media and video",
-            "Add rate limits, caching, and broader tests",
         ],
         "url": "https://antdunks.com/",
         "screenshot": "/static/images/antdunks-screenshot.png",
@@ -43,27 +35,28 @@ PROJECTS = [
             "Web Hosting",
             "Cloudflare",
         ],
-        "featured": True,
+        "featured": False,
     },
     {
-        "name": "Hegstrom & Sons",
-        "repo": "https://github.com/Gil-Gaitan/hegstromandsons-main",
-        "featured": True,
-    },
-    {
-        "name": "Cultivate Rhythms",
-        "featured": True,
+        "name": "Small Business Advertising",
+        "description": "Some work for local small businesses to set up a basic site with a custom domain and email address. Request forms offer a new form of contact with customers. Next we will be developing the system to add additional projects to the gallery.",
+        "names": [
+            "Hegstrom & Sons",
+            "Cultivate Rhythms",
+        ],
+        "featured": False,
     },
     {
         "name": "dropyourbeat.com",
-        "description": "F# and Fable dunk archive, fan site, and in-game dunk tracker.",
+        "description": "F# and Fable. Useful music app for increased productivity while working, by decreasing time spent on music selection.",
         "signup": "Sign up on the site if you want.",
-        "status": "Rolling out",
+        "status": "Live",
         "technologies": [
             "F#",
             "Fable",
         ],
         "url": "https://dropyourbeat.com",
+        "screenshot": "/static/images/dropyourbeat.png",
         "featured": True,
     },
 ]
